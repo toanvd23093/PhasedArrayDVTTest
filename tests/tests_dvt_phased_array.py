@@ -11,7 +11,7 @@ def test_main_lobe_gain(run_S21_scan):
     
     assert peak_gain >= dut_main_lobe_gain, f"Main lobe gain too low: {peak_gain:.2f} dB"
 
-# Verify beamwidth
+# Verify beamwidth (new changes in main)
 def test_beamwidth(run_S21_scan):
     theta, phi, S21_data, Pt, Lt, Lfs, Lm, Lr, Gr, dut_main_lobe_gain, dut_beamwidth, dut_steering_angle_accuracy, dut_sidelobe_level_db = run_S21_scan
     num_freq, len_theta, len_phi = S21_data.shape
