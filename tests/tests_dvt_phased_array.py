@@ -7,7 +7,8 @@ def test_main_lobe_gain(run_S21_scan):
     theta, phi, S21_data, Pt, Lt, Lfs, Lm, Lr, Gr, dut_main_lobe_gain, dut_beamwidth, dut_steering_angle_accuracy, dut_sidelobe_level_db = run_S21_scan
     peak_Pr = np.max(np.abs(S21_data))
     peak_gain = peak_Pr-Pt+Lt+Lfs+Lm-Gr+Lr
-
+    diff = np.abs(np.min(peak_gain-dut_main_lobe_gain))
+    
     assert peak_gain >= dut_main_lobe_gain, f"Main lobe gain too low: {peak_gain:.2f} dB"
 
 # Verify beamwidth
