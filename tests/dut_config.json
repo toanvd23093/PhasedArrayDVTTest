@@ -1,0 +1,11 @@
+{
+	"name" : "MicrostripLinearArray",
+	"version" : 1.0,
+	"center_freq" : 10e9,
+	"num_elements" : 6,
+	"beamwidth_deg" : 10,
+	"steering_accuracy_deg" : 1.0,
+	"main_lobe_gain_dB" : 18,
+	"sidelobe_level_dB" : -13,
+	"s11_max_dB" : -10
+}

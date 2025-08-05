@@ -1,0 +1,19 @@
+{
+	"name" : "beam_sweep",
+	"sweep_points" : 201,
+    "start_freq_Hz" : 8e9,
+	"stop_freq_Hz" : 12e9,
+    "power_dBm" : 10,
+	"TX_cable_loss_dB" : 2,
+	"RX_cable_loss_dB" : 2,
+	"Misc_loss_dB" : 0,
+	"RX_gain_dBi" : 20,
+	"range" : 1,
+    "azimuth_range" : [0, 360],
+    "elevation_range" : [0, 180],
+    "step_deg" : 10,
+	"mcu_ip" : "192.168.0.10",
+	"vna_ip" : "136.242.140.245",
+	"calc_set" : "CalSet_8-12-Port1_Testcable_adapter_FF_SMA_cable_6feet_201points",
+	"log_dir": "logs"
+}
