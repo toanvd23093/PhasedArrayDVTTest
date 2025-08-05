@@ -29,6 +29,8 @@ def test_beamwidth(run_S21_scan):
     theta_hpbw = theta[half_power_idx]
     HPBW_theta = theta_hpbw[-1] - theta_hpbw[0]
 
+    diff = np.abs(np.min(HPBW_theta-dut_beamwidth))
+    
     assert HPBW_theta <= dut_beamwidth, f"Beamwidth too wide: {HPBW_theta:.2f}°"
 
 # Verify steering accuracy
