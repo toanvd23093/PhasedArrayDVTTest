@@ -1,6 +1,7 @@
 import pytest
 import numpy as np
 
+# Verify main lobe peak gain
 def test_main_lobe_gain(run_S21_scan):
     # Pr = Pt + Gt - Lt - Lfs - Lm + Gr - Lr
     theta, phi, S21_data, Pt, Lt, Lfs, Lm, Lr, Gr, dut_main_lobe_gain, dut_beamwidth, dut_steering_angle_accuracy, dut_sidelobe_level_db = run_S21_scan
@@ -9,7 +10,7 @@ def test_main_lobe_gain(run_S21_scan):
 
     assert peak_gain >= dut_main_lobe_gain, f"Main lobe gain too low: {peak_gain:.2f} dB"
 
-
+# Verify beamwidth
 def test_beamwidth(run_S21_scan):
     theta, phi, S21_data, Pt, Lt, Lfs, Lm, Lr, Gr, dut_main_lobe_gain, dut_beamwidth, dut_steering_angle_accuracy, dut_sidelobe_level_db = run_S21_scan
     num_freq, len_theta, len_phi = S21_data.shape
@@ -29,7 +30,7 @@ def test_beamwidth(run_S21_scan):
 
     assert HPBW_theta <= dut_beamwidth, f"Beamwidth too wide: {HPBW_theta:.2f}°"
 
-
+# Verify steering accuracy
 def test_steering_accuracy(run_S21_scan):
     theta, phi, S21_data, Pt, Lt, Lfs, Lm, Lr, Gr, dut_main_lobe_gain, dut_beamwidth, dut_steering_angle_accuracy, dut_sidelobe_level_db = run_S21_scan
     target_angle = 30 
@@ -46,7 +47,7 @@ def test_steering_accuracy(run_S21_scan):
 
     assert error <= dut_steering_angle_accuracy, f"Steering error too large: {error:.2f}°"
 
-
+# Verify SLL
 def test_sidelobe_level(run_S21_scan):
     theta, phi, S21_data, Pt, Lt, Lfs, Lm, Lr, Gr, dut_main_lobe_gain, dut_beamwidth, dut_steering_angle_accuracy, dut_sidelobe_level_db = run_S21_scan
 
