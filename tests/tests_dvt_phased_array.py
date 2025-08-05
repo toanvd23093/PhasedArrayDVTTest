@@ -13,7 +13,7 @@ def test_main_lobe_gain(run_S21_scan):
 
 # Verify beamwidth (new changes in main)
 def test_beamwidth(run_S21_scan):
-    theta, phi, S21_data, Pt, Lt, Lfs, Lm, Lr, Gr, dut_main_lobe_gain, dut_beamwidth, dut_steering_angle_accuracy, dut_sidelobe_level_db = run_S21_scan
+    theta, phi1, S21_data, Pt, Lt, Lfs, Lm, Lr, Gr, dut_main_lobe_gain, dut_beamwidth, dut_steering_angle_accuracy, dut_sidelobe_level_db = run_S21_scan
     num_freq, len_theta, len_phi = S21_data.shape
     center_freq_idx = num_freq // 2  # Choose center frequency
     phi_fixed_idx = 0                # Fix phi=0°
