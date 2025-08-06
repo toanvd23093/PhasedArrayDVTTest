@@ -1,1 +1,5 @@
 *.pyc
+.coverage
+pytest.ini
+test_results.json
+tests/dvt_phased_array.py
